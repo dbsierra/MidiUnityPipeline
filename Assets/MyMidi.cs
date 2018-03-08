@@ -7,7 +7,7 @@ using SmfLite;
 
 public class MyMidi : MonoBehaviour {
 
-    public int bpm = 95;
+    public int bpm = 60;
 
     // Source MIDI file asset.
     public TextAsset sourceFile;
@@ -15,16 +15,18 @@ public class MyMidi : MonoBehaviour {
     MidiFileContainer song;
     MidiTrackSequencer seq;
 
-    IEnumerator Start()
+    public MidiPlayDebug Kick;
+    public MidiPlayDebug Snare;
+    public MidiPlayDebug Hat;
+
+    public void Init()
     {
-        // Load the MIDI song.
         song = MidiFileLoader.Load(sourceFile.bytes);
+        seq = new MidiTrackSequencer(song.tracks[0], song.division, bpm);
+        Kick.Init();
+        Snare.Init();
+        Hat.Init();
 
-        // Wait for one second to avoid stuttering.
-        yield return new WaitForSeconds(1.0f);
-
-        // Start sequencing.
-        ResetAndPlay(0);
     }
 
     // Reset and start sequecing.
@@ -32,6 +34,11 @@ public class MyMidi : MonoBehaviour {
     {
         // Start the sequencer and dispatch events at the beginning of the track.
         seq = new MidiTrackSequencer(song.tracks[0], song.division, bpm);
+        DispatchEvents(seq.Start(startTime));
+    }
+
+    public void Begin(float startTime)
+    {
         DispatchEvents(seq.Start(startTime));
     }
 
@@ -83,22 +90,22 @@ public class MyMidi : MonoBehaviour {
                 // If note On
                 if ((e.status & 0xf0) == 0x90)
                 {
-                    Debug.Log(Timer + " " + e.data1 + " " + e.data2);
-                }
-                /*
-                if ((e.status & 0xf0) == 0x90) {
-                    // C2
-                    if (e.data1 == 0x24) {
-                        GameObject.Find ("Kick").SendMessage ("OnNoteOn");
-                    } else if (e.data1 == 0x2a) {
-                        GameObject.Find ("Hat").SendMessage ("OnNoteOn");
-                    } else if (e.data1 == 0x2e) {
-                        GameObject.Find ("OHat").SendMessage ("OnNoteOn");
-                    } else if (e.data1 == 0x26 || e.data1 == 0x27 || e.data1 == 0x28) {
-                        GameObject.Find ("Snare").SendMessage ("OnNoteOn");
+                    //Debug.Log(Timer + " " + e.data1 + " " + e.data2);
+
+                    if(e.data1 == 0x3C)
+                    {
+                        Kick.Play();
                     }
+                    if(e.data1 == 0x3E)
+                    {
+                        Snare.Play();
+                    }
+                    if (e.data1 == 0x40)
+                    {
+                        Hat.Play();
+                    }   
                 }
-                */
+
             }
         }
     }
