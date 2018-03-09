@@ -8,7 +8,8 @@ public class MidiPlayDebug : MonoBehaviour
 
     Animator AC;
 
-    public Color color;
+    private int colorIndex;
+    public Color[] colors;
 
     public Light pointLight;
 
@@ -19,14 +20,15 @@ public class MidiPlayDebug : MonoBehaviour
 
     public void Update()
     {
-        pointLight.color = color;
-        GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", color);
+        pointLight.color = colors[colorIndex];
+        GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", colors[colorIndex]);
     }
 
     public void Play()
     {
         if(AC != null)
         {
+            colorIndex = (colorIndex + 1) % colors.Length;
             AC.SetTrigger("Pulse");
         }
     }
