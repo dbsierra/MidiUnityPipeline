@@ -285,17 +285,17 @@ Prefab:
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
       propertyPath: colors.Array.data[1].r
-      value: 0.7794118
+      value: 0.4705882
       objectReference: {fileID: 0}
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
       propertyPath: colors.Array.data[1].g
-      value: 0.2636246
+      value: 0.17301036
       objectReference: {fileID: 0}
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
       propertyPath: colors.Array.data[1].b
-      value: 0.4663824
+      value: 0.35155705
       objectReference: {fileID: 0}
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
@@ -1094,17 +1094,17 @@ Prefab:
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
       propertyPath: colors.Array.data[1].r
-      value: 0.7794118
+      value: 0.4705882
       objectReference: {fileID: 0}
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
       propertyPath: colors.Array.data[1].g
-      value: 0.2636246
+      value: 0.17301036
       objectReference: {fileID: 0}
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
       propertyPath: colors.Array.data[1].b
-      value: 0.4663824
+      value: 0.35155705
       objectReference: {fileID: 0}
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
@@ -1257,17 +1257,17 @@ Prefab:
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
       propertyPath: colors.Array.data[1].r
-      value: 0.7794118
+      value: 0.4705882
       objectReference: {fileID: 0}
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
       propertyPath: colors.Array.data[1].g
-      value: 0.2636246
+      value: 0.17301036
       objectReference: {fileID: 0}
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
       propertyPath: colors.Array.data[1].b
-      value: 0.4663824
+      value: 0.35155705
       objectReference: {fileID: 0}
     - target: {fileID: 114035423839664918, guid: 21303859c13e7b04fa7bb83b621a1ac4,
         type: 2}
@@ -1383,7 +1383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb33a5fbc0655d045bf280a89e6cfc9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 60
+  bpm: 87
   sourceFile: {fileID: 4900000, guid: f798d963621b5b345b823ffbb362f6d4, type: 3}
   Kick: {fileID: 661971457}
   Snare: {fileID: 685941398}
