@@ -13,15 +13,28 @@ public class LightControlMixerBehaviour : PlayableBehaviour
     Light m_TrackBinding;
     bool m_FirstFrameHappened;
 
+    public override void OnBehaviourPlay(Playable playable, FrameData info)
+    {
+        base.OnBehaviourPlay(playable, info);
+      //  Debug.Log("On Behaviour Play");
+    }
+
+    public override void OnPlayableCreate(Playable playable)
+    {
+        base.OnPlayableCreate(playable);
+      //  Debug.Log("Playable create");
+    }
+
     public override void ProcessFrame(Playable playable, FrameData info, object playerData)
     {
         m_TrackBinding = playerData as Light;
-
+        
         if (m_TrackBinding == null)
             return;
 
         if (!m_FirstFrameHappened)
         {
+           // Debug.Log("First frame");
             m_DefaultColor = m_TrackBinding.color;
             m_DefaultIntensity = m_TrackBinding.intensity;
             m_DefaultBounceIntensity = m_TrackBinding.bounceIntensity;
@@ -68,6 +81,8 @@ public class LightControlMixerBehaviour : PlayableBehaviour
 
     public override void OnPlayableDestroy (Playable playable)
     {
+      //  Debug.Log("Playable destroyed");
+
         m_FirstFrameHappened = false;
 
         if(m_TrackBinding == null)

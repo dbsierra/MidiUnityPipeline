@@ -10,4 +10,16 @@ public class LightControlBehaviour : PlayableBehaviour
     public float intensity = 1f;
     public float bounceIntensity = 1f;
     public float range = 10f;
+
+    public override void OnGraphStart(Playable playable)
+    {
+        base.OnGraphStart(playable);
+      //  Debug.Log("Start");
+    }
+    public override void OnGraphStop(Playable playable)
+    {
+        base.OnGraphStart(playable);
+     //   Debug.Log("Stop");
+    }
+
 }

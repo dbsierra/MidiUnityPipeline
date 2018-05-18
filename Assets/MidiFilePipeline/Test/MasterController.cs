@@ -12,7 +12,7 @@ public class MasterController : MonoBehaviour {
     // Use this for initialization
     IEnumerator Start () {
 
-        MidiPlayer.Init();
+      //  MidiPlayer.Init();
 
         // Wait for one second to avoid stuttering.
         yield return new WaitForSeconds(1.0f);
@@ -30,6 +30,6 @@ public class MasterController : MonoBehaviour {
        // Debug.Log((float)playableDirector.time);
         float startTime = (float)playableDirector.time;
        // MidiPlayer.Begin(startTime); 
-        playableDirector.Play();
+       // playableDirector.Play();
     }
 }

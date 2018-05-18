@@ -14,9 +14,9 @@ MonoBehaviour:
   m_NextId: 0
   m_Tracks:
   - {fileID: 114017004394653900}
-  - {fileID: 114864526751604672}
+  - {fileID: 114361349343194638}
   - {fileID: 114921298006590906}
-  m_FixedDuration: 0
+  m_FixedDuration: 11.083333333333334
   m_EditorSettings:
     m_Framerate: 60
   m_DurationMode: 0
@@ -617,16 +617,16 @@ MonoBehaviour:
   m_Name: Audio Track
   m_EditorClassIdentifier: 
   m_Locked: 0
-  m_Muted: 1
+  m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_AnimClip: {fileID: 0}
   m_Parent: {fileID: 11400000}
   m_Children: []
   m_Clips:
-  - m_Start: 0
-    m_ClipIn: 0
+  - m_Start: 2.533333333333333
+    m_ClipIn: 0.016666666666666666
     m_Asset: {fileID: 114612970808277122}
-    m_Duration: 11.075918367346938
+    m_Duration: 11.05925170068027
     m_TimeScale: 1
     m_ParentTrack: {fileID: 114017004394653900}
     m_EaseInDuration: 0
@@ -654,57 +654,6 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: BackBeat
-    m_Version: 1
-  - m_Start: 11.075918367346938
-    m_ClipIn: 0
-    m_Asset: {fileID: 114510008442317342}
-    m_Duration: 11.075918367346938
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 114017004394653900}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -758,7 +707,7 @@ MonoBehaviour:
   m_Clip: {fileID: 8300000, guid: 0717f6b6328814440b882b833577c030, type: 3}
   m_Loop: 0
   m_bufferingTime: 0.1
---- !u!114 &114510008442317342
+--- !u!114 &114361349343194638
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -766,12 +715,86 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1977359656, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: 
+  m_Script: {fileID: 11500000, guid: 397e9d10a3abebb4aad67826b7e90a8c, type: 3}
+  m_Name: Midi Event Track
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: 916472cbba40eb844ac67b135724aa77, type: 3}
-  m_Loop: 0
-  m_bufferingTime: 0.1
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Start: 2.5581022753929137
+    m_ClipIn: 0
+    m_Asset: {fileID: 114620583614870734}
+    m_Duration: 11.03448275862069
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114361349343194638}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: MidiEventClip
+    m_Version: 1
+  m_Version: 1
 --- !u!114 &114612970808277122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -786,7 +809,7 @@ MonoBehaviour:
   m_Clip: {fileID: 8300000, guid: 916472cbba40eb844ac67b135724aa77, type: 3}
   m_Loop: 0
   m_bufferingTime: 0.1
---- !u!114 &114864526751604672
+--- !u!114 &114620583614870734
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -794,18 +817,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 46519060, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: Activation Track
+  m_Script: {fileID: 11500000, guid: db487848c3bc6c44590f9b1d826cf9b6, type: 3}
+  m_Name: MidiEventClip
   m_EditorClassIdentifier: 
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_AnimClip: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Version: 1
-  m_PostPlaybackState: 3
+  template:
+    MidiFile: {fileID: 0}
+    Bpm: 0
+    Director: {fileID: 0}
+  MidiFile:
+    exposedName: 4758c1f0ede34064eb66f82aa9f69f78
+    defaultValue: {fileID: 0}
+  BPM: 87
+  NumberOfBeats: 16
 --- !u!114 &114921298006590906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -818,7 +841,7 @@ MonoBehaviour:
   m_Name: Animation Track
   m_EditorClassIdentifier: 
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_AnimClip: {fileID: 74593563819046760}
   m_Parent: {fileID: 11400000}

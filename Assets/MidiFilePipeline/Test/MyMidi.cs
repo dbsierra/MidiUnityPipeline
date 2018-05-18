@@ -25,10 +25,18 @@ public class MyMidi : MonoBehaviour {
 
     public NoteOnEvent m_noteOnEvent;
 
+    private void Start()
+    {
+        Init();
+        Begin(Time.time);
+    }
+
     public void Init()
     {
         song = MidiFileLoader.Load(sourceFile.bytes);
         seq = new MidiTrackSequencer(song.tracks[0], song.division, bpm);
+
+       // Debug.Log(seq.GetDuration());
     }
 
     // Reset and start sequecing.
@@ -37,18 +45,38 @@ public class MyMidi : MonoBehaviour {
         // Start the sequencer and dispatch events at the beginning of the track.
         seq = new MidiTrackSequencer(song.tracks[0], song.division, bpm);
         DispatchEvents(seq.Start(startTime));
+       // Debug.Log(startTime + " " + seq.Playing);
+
     }
 
     public void Begin(float startTime)
     {
         DispatchEvents(seq.Start(startTime));
+       // Debug.Log(startTime + " " + seq.Playing);
+
     }
+
+    PlayState m_previousState = PlayState.Playing;
 
     // Update function (MonoBehaviour)
     void Update()
     {
         if(m_director != null)
         {
+
+            if (m_director.state == PlayState.Paused)
+            {
+                seq.Stop();
+            }
+            if (m_director.state == PlayState.Playing)
+            {
+                if(m_previousState == PlayState.Paused)
+                {
+                    ResetAndPlay((float)m_director.time);
+                }
+            }
+
+            m_previousState = m_director.state;
 
         }
 

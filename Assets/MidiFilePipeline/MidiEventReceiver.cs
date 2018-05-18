@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MidiNoteEventReceiver : MonoBehaviour {
-
+public class MidiEventReceiver : MonoBehaviour {
 
     public MidiPlayDebug Kick;
     public MidiPlayDebug Snare;
@@ -11,9 +10,13 @@ public class MidiNoteEventReceiver : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        Kick.Init();
-        Snare.Init();
-        Hat.Init();
+        if(Kick != null)
+        {
+            Kick.Init();
+            Snare.Init();
+            Hat.Init();
+        }
+
     }
     
     // Update is called once per frame

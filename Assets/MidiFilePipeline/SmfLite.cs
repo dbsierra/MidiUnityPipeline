@@ -174,6 +174,25 @@ namespace SmfLite
         {
             pulsePerSecond = bpm / 60.0f * ppqn;
             enumerator = track.GetEnumerator ();
+
+          //  UnityEngine.Debug.Log("Pulse per second: " + pulsePerSecond);
+        }
+
+        // Returns of the duration of this midi track
+        public float GetDuration()
+        {
+            float duration = 0.0f;
+            int count = 0;
+            while(enumerator.MoveNext())
+            {
+                duration += enumerator.Current.delta/pulsePerSecond;
+                count++;
+
+              //  UnityEngine.Debug.Log(enumerator.Current);
+            }
+
+            UnityEngine.Debug.Log("Count " + count);
+            return duration;
         }
 
         // Start the sequence.
@@ -190,6 +209,13 @@ namespace SmfLite
             }
         }
 
+        // Stop the sequence.
+        public void Stop()
+        {
+            playing = false;
+            
+        }
+
         // Advance the song position.
         // Returns a list of events between the current position and the next one.
         public List<MidiEvent> Advance (float deltaTime)
@@ -199,14 +225,18 @@ namespace SmfLite
             }
             
             pulseCounter += pulsePerSecond * deltaTime;
-            
+
             if (pulseCounter < pulseToNext) {
                 return null;
             }
             
             var messages = new List<MidiEvent> ();
-            
+
+          //  UnityEngine.Debug.Log("Advance");
             while (pulseCounter >= pulseToNext) {
+
+             //   UnityEngine.Debug.Log("Pulse Counter: " + pulseCounter + " pulse to next: " + pulseToNext + " - " + enumerator.Current);
+
                 var pair = enumerator.Current;
                 messages.Add (pair.midiEvent);
                 if (!enumerator.MoveNext ()) {
